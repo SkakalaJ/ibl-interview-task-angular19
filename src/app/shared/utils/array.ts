@@ -1,4 +1,4 @@
-import { isEqual, uniq, uniqBy } from 'lodash';
+import { isEqual, uniq, uniqBy } from 'lodash-es';
 
 export default class ArrayUtils {
   static compareDeepUnordered<T>(arr1: T[], arr2: T[]): boolean {
