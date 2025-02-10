@@ -52,7 +52,9 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "extractLicenses": false,
+              "sourceMap": true
             },
             "development": {
               "optimization": false,
@@ -71,6 +73,9 @@
             "development": {
               "buildTarget": "task-angular-19:build:development"
             }
+          },
+          "options": {
+            "proxyConfig": "proxy.conf.json"
           },
           "defaultConfiguration": "development"
         },
