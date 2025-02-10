@@ -4,6 +4,7 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
+import helmet from 'helmet';
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -35,6 +36,24 @@ app.use(
     index: false,
     redirect: false,
   }),
+);
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["*"],  // Allow all sources
+        scriptSrc: ["'self'", "'unsafe-inline'"], // Allow inline scripts (not recommended for production)
+        styleSrc: ["'self'", "'unsafe-inline'"], // Allow inline styles
+        imgSrc: ["'self'", "data:", "*"], // Allow images from any source
+        connectSrc: ["'self'", "*"], // Allow connections (e.g., APIs)
+        fontSrc: ["'self'", "*"], // Allow fonts
+        objectSrc: ["'none'"], // Disallow embedding objects
+        frameAncestors: ["'none'"], // Prevent clickjacking
+        upgradeInsecureRequests: [], // Upgrade HTTP to HTTPS
+      },
+    },
+  })
 );
 
 /**
