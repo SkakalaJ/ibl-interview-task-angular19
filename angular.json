@@ -39,6 +39,7 @@
           },
           "configurations": {
             "production": {
+              "optimization": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -54,14 +55,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                },
-                "fonts": true
-              },
+              "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
             }
