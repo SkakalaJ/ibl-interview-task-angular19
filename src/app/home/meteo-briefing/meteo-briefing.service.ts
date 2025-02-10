@@ -4,7 +4,7 @@ import { OgcieIblsoftApiClient } from '../../shared/lib/api-clients/ogcie-iblsof
 import { OpmetQueryBody, OpmetQueryParams, OpmetQueryResponse } from '../../shared/types/ogcie-iblsoft.api.types';
 import { FormSubmitData } from './meteo-briefing-form/types/meteo-briefing-form.types';
 import { MeteoBriefingTableData } from './meteo-briefing-table/types/meteo-briefing-table.types';
-import { groupBy } from 'lodash';
+import { groupBy } from 'lodash-es';
 import DateUtils from '../../shared/utils/date';
 
 @Injectable({
